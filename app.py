@@ -327,6 +327,29 @@ div[data-testid="stRadio"] label {font-size:.94rem;}
   .block-container:has(.dashboard-page-marker) .st-key-dashboard_hero {padding:23px 20px;border-radius:21px;}
   .block-container:has(.dashboard-page-marker) .st-key-dashboard_hero [data-testid="stImage"] img {max-height:220px;}
 }
+/* Trustline sidebar visibility fix: preserve desktop navigation and its toggle. */
+@media (min-width: 701px) {
+  [data-testid="stSidebar"] {
+    display: block !important;
+    visibility: visible !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    margin-left: 0 !important;
+    transform: translateX(0) !important;
+  }
+  [data-testid="stSidebar"][aria-expanded="false"] {
+    display: block !important;
+    visibility: visible !important;
+    width: 288px !important;
+    min-width: 288px !important;
+    margin-left: 0 !important;
+    transform: translateX(0) !important;
+  }
+  [data-testid="stSidebarCollapsedControl"] {
+    display: flex !important;
+    visibility: visible !important;
+  }
+}
 </style>
 """, unsafe_allow_html=True)
 
