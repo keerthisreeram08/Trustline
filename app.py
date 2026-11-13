@@ -156,6 +156,25 @@ div[data-testid="stExpander"] {background:var(--surface);border:1px solid var(--
   background:var(--surface-white)!important;
   border:1px solid var(--border)!important;border-radius:10px!important;
 }
+/* Fix dark +/- stepper buttons on number inputs */
+[data-testid="stNumberInput"] [data-baseweb="input"],
+[data-testid="stNumberInput"] button,
+[data-testid="stNumberInputStepUp"],
+[data-testid="stNumberInputStepDown"] {
+  background-color:var(--surface-white)!important;
+  color:var(--text-primary)!important;
+  border-color:var(--border)!important;
+}
+[data-testid="stNumberInput"] button:hover,
+[data-testid="stNumberInputStepUp"]:hover,
+[data-testid="stNumberInputStepDown"]:hover {
+  background-color:var(--rose-soft)!important;
+  color:var(--rose-hover)!important;
+}
+[data-testid="stNumberInput"] button svg {
+  fill:var(--text-primary)!important;
+  color:var(--text-primary)!important;
+}
 [data-testid="stTextInput"] input,
 [data-testid="stNumberInput"] input,
 [data-testid="stTextArea"] textarea {
@@ -167,6 +186,18 @@ div[data-testid="stExpander"] {background:var(--surface);border:1px solid var(--
 [data-testid="stMultiSelect"] [data-baseweb="select"]>div {
   color:var(--text-primary)!important;background:var(--surface-white)!important;
 }
+/* Fix dark selectbox background across all pages */
+[data-testid="stSelectbox"] [data-baseweb="select"],
+[data-testid="stMultiSelect"] [data-baseweb="select"] {
+  background-color:var(--surface-white)!important;
+  border-radius:10px!important;
+}
+[data-testid="stSelectbox"] [data-baseweb="select"]>div,
+[data-testid="stMultiSelect"] [data-baseweb="select"]>div {
+  background-color:var(--surface-white)!important;
+  border:1px solid var(--border)!important;
+  border-radius:10px!important;
+}
 [data-testid="stSelectbox"] [data-baseweb="select"] [role="combobox"],
 [data-testid="stMultiSelect"] [data-baseweb="select"] [role="combobox"] {
   color:var(--text-primary)!important;background:transparent!important;
@@ -174,6 +205,11 @@ div[data-testid="stExpander"] {background:var(--surface);border:1px solid var(--
 [data-testid="stSelectbox"] [data-baseweb="select"] *,
 [data-testid="stMultiSelect"] [data-baseweb="select"] * {
   color:var(--text-primary)!important;background-color:transparent!important;
+}
+[data-testid="stSelectbox"] svg,
+[data-testid="stMultiSelect"] svg {
+  fill:var(--text-primary)!important;
+  color:var(--text-primary)!important;
 }
 .st-key-history-status-filter [data-baseweb="select"],
 .st-key-history-status-filter [data-baseweb="select"] *,
@@ -255,9 +291,61 @@ div[data-testid="stExpander"] {background:var(--surface);border:1px solid var(--
   color:var(--text-primary);background:var(--surface);
   border-color:var(--border);
 }
-[data-testid="stAlert"] {
-  background:var(--surface);border:1px solid var(--border);border-radius:12px;
-  box-shadow:0 3px 12px rgba(90,45,58,.025);
+/* Fix dark callout boxes (st.info, st.warning, st.success, st.error) */
+[data-testid="stAlert"],
+[data-testid="stNotification"],
+[data-baseweb="notification"] {
+  background-color:var(--surface-white)!important;
+  color:var(--text-primary)!important;
+  border:1px solid var(--border)!important;
+  border-radius:12px!important;
+  box-shadow:0 3px 12px rgba(90,45,58,.025)!important;
+}
+[data-testid="stAlert"] > div,
+[data-testid="stNotification"] > div,
+[data-baseweb="notification"] > div {
+  background-color:transparent!important;
+  color:var(--text-primary)!important;
+}
+[data-testid="stAlert"]:has([data-testid="stAlertContentInfo"]) {
+  background-color:#F8F4FA!important;
+  border-color:#E6DCEB!important;
+}
+[data-testid="stAlert"]:has([data-testid="stAlertContentWarning"]) {
+  background-color:#FBF1E2!important;
+  border-color:#F2DEC0!important;
+}
+[data-testid="stAlert"]:has([data-testid="stAlertContentSuccess"]) {
+  background-color:#E5F2EB!important;
+  border-color:#CBE4D7!important;
+}
+[data-testid="stAlert"]:has([data-testid="stAlertContentError"]) {
+  background-color:#F9E6EA!important;
+  border-color:#F0CFD6!important;
+}
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] span,
+[data-testid="stAlert"] div {
+  color:var(--text-primary)!important;
+}
+/* Fix dark code block on Model page */
+[data-testid="stCode"],
+[data-testid="stCode"] pre,
+[data-testid="stCode"] code,
+.stCodeBlock,
+.stCodeBlock pre,
+.stCodeBlock code {
+  background-color:#FBF7F6!important;
+  color:var(--text-primary)!important;
+  border-color:var(--border)!important;
+}
+[data-testid="stCode"] {
+  border:1px solid var(--border)!important;
+  border-radius:12px!important;
+}
+[data-testid="stCode"] button {
+  color:var(--text-secondary)!important;
+  background-color:var(--surface-white)!important;
 }
 hr {border-color:var(--border);}
 div[data-testid="stRadio"] label {font-size:.94rem;}
